@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萌萌茶屋 - Moe Moe Tea House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <svg class="logo-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <div>
+                        <h1>萌萌茶屋</h1>
+                        <p>MOE MOE TEA HOUSE</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">首頁</a></li>
+                    <li><a href="#menu">菜單</a></li>
+                    <li><a href="#drinks">飲品</a></li>
+                    <li><a href="#recipes">食譜</a></li>
+                    <li><a href="#about">關於我們</a></li>
+                    <li>
+                        <button class="cart-button" onclick="toggleCart()">
+                            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1200&q=80" alt="Japanese Tea House">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="float-decoration float-1">✨</div>
+        <div class="float-decoration float-2">💖</div>
+        <div class="float-decoration float-3">🌸</div>
+        <div class="float-decoration float-4">⭐</div>
+
+        <div class="hero-content">
+            <svg class="hero-icon icon" viewBox="0 0 24 24" fill="var(--primary)" stroke="white" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+
+            <h2 class="fade-in">萌萌茶屋</h2>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle fade-in delay-1">MOE MOE TEA HOUSE</p>
+            <p class="hero-text fade-in delay-2">歡迎光臨主人！✨</p>
+            <p class="hero-description fade-in delay-3">一杯日式好茶，療癒您的心靈 💖</p>
+
+            <div class="hero-info fade-in delay-4">
+                <svg class="star-icon icon" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>營業時間：11:00 - 21:00</span>
+                <span>•</span>
+                <span>每日新鮮手作</span>
+                <svg class="star-icon icon" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+            </div>
+
+            <a href="#recipes" class="cta-button fade-in delay-5">
+                <svg class="sparkle-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L15 8.5L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L9 8.5L12 2Z"></path>
+                </svg>
+                查看菜單
+                <svg class="sparkle-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L15 8.5L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L9 8.5L12 2Z"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Recipe/Menu Section -->
+    <section class="recipes-section" id="recipes">
+        <div class="container">
+            <h2 class="section-title">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                熱門飲品菜單
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+            </h2>
+            
+            <!-- Added cart widget -->
+            <div class="cart-widget">
+                <h3>購物車</h3>
+                <button class="view-cart-btn" onclick="toggleCart()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    查看購物車
+                </button>
+            </div>
+            
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&q=80" alt="珍珠奶茶">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>珍珠奶茶</h3>
+                        <p class="recipe-description">經典台式珍珠奶茶，Q彈珍珠配上香濃奶茶</p>
+                        <div class="recipe-footer">
+                            <span class="price">NT$ 65</span>
+                            <button class="add-to-cart-btn" onclick="addToCart('珍珠奶茶', 65)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=600&q=80" alt="芒果冰沙">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>芒果冰沙</h3>
+                        <p class="recipe-description">新鮮芒果打製，消暑解渴的夏日聖品</p>
+                        <div class="recipe-footer">
+                            <span class="price">NT$ 85</span>
+                            <button class="add-to-cart-btn" onclick="addToCart('芒果冰沙', 85)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="檸檬綠茶">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>檸檬綠茶</h3>
+                        <p class="recipe-description">清新檸檬搭配綠茶，酸甜爽口</p>
+                        <div class="recipe-footer">
+                            <span class="price">NT$ 55</span>
+                            <button class="add-to-cart-btn" onclick="addToCart('檸檬綠茶', 55)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&q=80" alt="草莓優格">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>草莓優格</h3>
+                        <p class="recipe-description">健康美味的草莓優格飲品，富含益生菌</p>
+                        <div class="recipe-footer">
+                            <span class="price">NT$ 75</span>
+                            <button class="add-to-cart-btn" onclick="addToCart('草莓優格', 75)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="焦糖奶蓋紅茶">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>焦糖奶蓋紅茶</h3>
+                        <p class="recipe-description">香濃焦糖奶蓋配上紅茶基底，層次豐富</p>
+                        <div class="recipe-footer">
+                            <span class="price">NT$ 80</span>
+                            <button class="add-to-cart-btn" onclick="addToCart('焦糖奶蓋紅茶', 80)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1534353341328-fefb2d4683be?w=600&q=80" alt="百香果綠茶">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>百香果綠茶</h3>
+                        <p class="recipe-description">熱帶水果風味，酸甜適中的夏日特調</p>
+                        <div class="recipe-footer">
+                            <span class="price">NT$ 70</span>
+                            <button class="add-to-cart-btn" onclick="addToCart('百香果綠茶', 70)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>
+                    <svg class="cart-icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    購物車明細
+                </h3>
+                <button class="close-btn" onclick="toggleCart()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">購物車是空的，快去選購吧！🍵</p>
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>總計：</span>
+                    <span class="total-price" id="totalPrice">NT$ 0</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    結帳
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-title">
+                    <svg class="heart-icon icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span>© 2025 萌萌茶屋 Moe Moe Tea House</span>
+                    <svg class="heart-icon icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <p class="footer-text">
+                    <svg class="sparkle-small icon" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    用心沖泡每一杯 • 傳遞日式溫暖與療癒
+                    <svg class="sparkle-small icon" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Embedded JavaScript for shopping cart functionality -->
+    <script>
+        // Shopping cart data
+        let cart = []
+
+        // Toggle cart modal
+        function toggleCart() {
+            const modal = document.getElementById("cartModal")
+            modal.classList.toggle("active")
+            updateCartDisplay()
+        }
+
+        // Add item to cart
+        function addToCart(name, price) {
+            // Check if item already exists
+            const existingItem = cart.find((item) => item.name === name)
+
+            if (existingItem) {
+                existingItem.quantity += 1
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1,
+                })
+            }
+
+            updateCartCount()
+            updateCartDisplay()
+
+            // Show animation feedback
+            const cartButton = document.querySelector(".cart-button")
+            cartButton.style.animation = "none"
+            setTimeout(() => {
+                cartButton.style.animation = ""
+            }, 10)
+        }
+
+        // Remove item from cart
+        function removeFromCart(name) {
+            cart = cart.filter((item) => item.name !== name)
+            updateCartCount()
+            updateCartDisplay()
+        }
+
+        // Update item quantity
+        function updateQuantity(name, change) {
+            const item = cart.find((item) => item.name === name)
+            if (item) {
+                item.quantity += change
+                if (item.quantity <= 0) {
+                    removeFromCart(name)
+                } else {
+                    updateCartCount()
+                    updateCartDisplay()
+                }
+            }
+        }
+
+        // Update cart count badge
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0)
+            document.getElementById("cartCount").textContent = count
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            const cartItems = document.getElementById("cartItems")
+            const totalPrice = document.getElementById("totalPrice")
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">購物車是空的，快去選購吧！🍵</p>'
+                totalPrice.textContent = "NT$ 0"
+                return
+            }
+
+            let total = 0
+            let html = ""
+
+            cart.forEach((item) => {
+                const itemTotal = item.price * item.quantity
+                total += itemTotal
+
+                html += `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">NT$ ${item.price}</div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
+                            <span class="quantity-value">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart('${item.name}')">移除</button>
+                    </div>
+                `
+            })
+
+            cartItems.innerHTML = html
+            totalPrice.textContent = `NT$ ${total}`
+        }
+
+        // Checkout function
+        function checkout() {
+            if (cart.length === 0) {
+                alert("購物車是空的！")
+                return
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+            const itemsList = cart.map((item) => `${item.name} x${item.quantity}`).join("\n")
+
+            alert(`感謝您的訂購！\n\n訂單明細：\n${itemsList}\n\n總金額：NT$ ${total}\n\n我們會盡快為您準備！💖`)
+
+            // Clear cart
+            cart = []
+            updateCartCount()
+            updateCartDisplay()
+            toggleCart()
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener("click", (event) => {
+            const modal = document.getElementById("cartModal")
+            if (event.target === modal) {
+                toggleCart()
+            }
+        })
+    </script>
+</body>
+</html>
