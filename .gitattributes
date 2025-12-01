@@ -1,0 +1,5 @@
+*.ts linguist-vendored
+*.tsx linguist-vendored
+*.d.ts linguist-generated
+*.html linguist-language=HTML
+*.css linguist-language=CSS
